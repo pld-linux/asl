@@ -2,7 +2,7 @@ Summary:	Multi-target portable assembler
 Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
-Release:	2
+Release:	3
 License:	GPL-like (but not GPL)
 Group:		Development/Languages
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
@@ -71,12 +71,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 #%doc README.gz
-#%lang(en) %doc as-en.doc.gz
+#%doc as-en.doc.gz
 #%lang(de) %doc as-de.doc.gz
 %docdir %{_docdir}/%{name}-%{version}
 %dir %{_docdir}/%{name}-%{version}
 %{_docdir}/%{name}-%{version}/README*
-%lang(en) %{_docdir}/%{name}-%{version}/as-en.doc*
+%{_docdir}/%{name}-%{version}/as-en.doc*
 %lang(de) %{_docdir}/%{name}-%{version}/as-de.doc*
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
