@@ -2,15 +2,15 @@ Summary:	Multi-target portable assembler
 Name:		asl
 Version:	1.41r8
 Release:	1
+License:	GPL-like (but not GPL)
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://sunsite.unc.edu/pub/Linux/lang/assemblers/%{name}-%{version}.tar.gz
 Source1:	%{name}-Makefile.def
-License:	GPL-like (but not GPL)
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A general purpose multi-target macro assembler with supporting tools.
@@ -48,9 +48,7 @@ install asl pbind plist p2bin p2hex $RPM_BUILD_ROOT%{_bindir}
 install asl.1 pbind.1 plist.1 p2bin.1 p2hex.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install include/* $RPM_BUILD_ROOT%{_includedir}/%{name}
 
-for i in *.msg ; do
-  install $i $RPM_BUILD_ROOT%{_libdir}/asl
-done
+install *.msg $RPM_BUILD_ROOT%{_libdir}/asl
 
 #cp -f doc_EN/as.doc as-en.doc
 #cp -f doc_DE/as.doc as-de.doc
