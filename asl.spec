@@ -38,7 +38,7 @@ ARCH=__68k
 %endif
 
 %{__make} all docs ARCH=$ARCH \
-	OPTFLAGS="%{?debug:-g -O}%{!?debug:$RPM_OPT_FLAGS -fomit-frame-pointer}"
+	OPTFLAGS="%{?debug:-g -O0}%{!?debug:$RPM_OPT_FLAGS -fomit-frame-pointer}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
