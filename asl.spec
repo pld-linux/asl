@@ -2,18 +2,18 @@ Summary:	Multi-target portable assembler
 Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
-Release:	5
+Release:	6
 License:	GPL-like
 Group:		Development/Languages
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
 # Source0-md5:	f8b34f1acb48663243402b43f6070fd3
 Source1:	%{name}-Makefile.def
+Patch0:		%{name}-morearchs.patch
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-format-latex
 BuildRequires:	tetex-tex-german
-BuildRequires:  tetex-makeindex
-ExclusiveArch:	alpha %{ix86} sparc m68k
+BuildRequires:	tetex-makeindex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,27 +27,16 @@ sygna³owych.
 
 %prep
 %setup -q
+%patch0 -p1
+
 install %{SOURCE1} Makefile.def
 
 %build
-%ifarch alpha axp
-ARCH=__alpha
-%endif
-
-%ifarch %{ix86}
-ARCH=__i386
-%endif
-
-%ifarch sparc
-ARCH=__sparc
-%endif
-
-%ifarch m68k
-ARCH=__68k
-%endif
-
-%{__make} all docs ARCH=$ARCH \
-	OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
+%{__make} all docs \
+	CC="%{__cc}" \
+	LD="%{__cc}" \
+	CFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer} -Wall" \
+	LIBDIR="%{_libdir}/asl"
 
 %install
 rm -rf $RPM_BUILD_ROOT
