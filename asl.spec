@@ -10,6 +10,9 @@ Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version
 Source1:	%{name}-Makefile.def
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
+BuildRequires:	tetex-format-latex
+BuildRequires:	tetex-tex-german
+BuildRequires:  tetex-makeindex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveArch:	alpha %{ix86} sparc m68k
 
