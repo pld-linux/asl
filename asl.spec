@@ -65,6 +65,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/*
 #%lang(en) %doc as-en.doc.gz
 #%lang(de) %doc as-de.doc.gz
 %docdir %{_docdir}/%{name}-%{version}
+%dir %{_docdir}/%{name}-%{version}
 %{_docdir}/%{name}-%{version}/README*
 %lang(en) %{_docdir}/%{name}-%{version}/as-en.doc*
 %lang(de) %{_docdir}/%{name}-%{version}/as-de.doc*
