@@ -2,7 +2,7 @@ Summary:	Multi-target portable assembler
 Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
-Release:	4
+Release:	5
 License:	GPL-like
 Group:		Development/Languages
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
@@ -13,8 +13,8 @@ BuildRequires:	tetex-dvips
 BuildRequires:	tetex-format-latex
 BuildRequires:	tetex-tex-german
 BuildRequires:  tetex-makeindex
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveArch:	alpha %{ix86} sparc m68k
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A general purpose multi-target macro assembler with supporting tools.
