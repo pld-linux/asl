@@ -10,6 +10,7 @@ Source1:	%{name}-Makefile.def
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+ExclusiveArch:	alpha %{ix86} sparc m68k
 
 %description
 A general purpose multi-target macro assembler with supporting tools.
@@ -29,7 +30,7 @@ install %{SOURCE1} Makefile.def
 ARCH=__alpha
 %endif
 
-%ifarch %ix86
+%ifarch %{ix86}
 ARCH=__i386
 %endif
 
@@ -37,7 +38,7 @@ ARCH=__i386
 ARCH=__sparc
 %endif
 
-%ifarch 68k
+%ifarch m68k
 ARCH=__68k
 %endif
 
