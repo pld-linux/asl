@@ -1,0 +1,24 @@
+# -------------------------------------------------------------------------
+# choose your compiler (must be ANSI-compliant!) and linker command, plus
+# any additionally needed flags
+
+CC = gcc
+LD = gcc
+CFLAGS = $(OPTFLAGS) -Wall -D$(ARCH) -D__linux__
+# -------------------------------------------------------------------------
+# directories where binaries, includes, and manpages should go during
+# installation
+
+PREFIX = /usr
+BINDIR = $(PREFIX)/bin
+INCDIR = $(PREFIX)/include/asl
+MANDIR = $(PREFIX)/share/man
+LIBDIR = $(PREFIX)/lib/asl
+DOCDIR = $(PREFIX)/share/doc/asl-1.41r8
+
+# -------------------------------------------------------------------------
+# character encoding to use (choose one of them)
+
+CHARSET = CHARSET_ISO8859_1
+# CHARSET = CHARSET_ASCII7
+# CHARSET = CHARSET_IBM437
