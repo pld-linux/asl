@@ -57,28 +57,14 @@ install include/* $RPM_BUILD_ROOT%{_includedir}/%{name}
 
 install *.msg $RPM_BUILD_ROOT%{_libdir}/asl
 
-#cp -f doc_EN/as.doc as-en.doc
-#cp -f doc_DE/as.doc as-de.doc
-#gzip -9nf README as-en.doc as-de.doc
-install doc_EN/as.doc $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/as-en.doc
-install doc_DE/as.doc $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/as-de.doc
-install README $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-
-gzip -9nf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc README.gz
-#%doc as-en.doc.gz
-#%lang(de) %doc as-de.doc.gz
-%docdir %{_docdir}/%{name}-%{version}
-%dir %{_docdir}/%{name}-%{version}
-%{_docdir}/%{name}-%{version}/README*
-%{_docdir}/%{name}-%{version}/as-en.doc*
-%lang(de) %{_docdir}/%{name}-%{version}/as-de.doc*
+%doc README
+%doc doc_EN/as.doc
+%lang(de) %doc doc_DE/as.doc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_includedir}/asl
