@@ -1,4 +1,5 @@
 Summary:	Multi-target portable assembler
+Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
 Release:	2
@@ -15,6 +16,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A general purpose multi-target macro assembler with supporting tools.
 This assembler supports many targets including some PIC's and DSP's.
+
+%description -l pl
+Makroasembler ogólnego przeznaczenia wraz z narzêdziami. Potrafi
+generowaæ kod dla wielu rodzin uk³adów, tak¿e dla procesorów
+sygna³owych.
 
 %prep
 %setup -q
@@ -38,7 +44,7 @@ ARCH=__68k
 %endif
 
 %{__make} all docs ARCH=$ARCH \
-	OPTFLAGS="%{?debug:-g -O0}%{!?debug:$RPM_OPT_FLAGS -fomit-frame-pointer}"
+	OPTFLAGS="%{rpmcflags} %{!?debug:-fomit-frame-pointer}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
