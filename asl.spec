@@ -3,7 +3,7 @@ Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
 Release:	3
-License:	GPL-like (but not GPL)
+License:	GPL-like
 Group:		Development/Languages
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
 Source1:	%{name}-Makefile.def
@@ -62,8 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%doc doc_EN/as.doc
+%doc README doc_EN/as.doc
 %lang(de) %doc doc_DE/as.doc
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
