@@ -1,7 +1,7 @@
 Summary:	Multi-target portable assembler
 Name:		asl
 Version:	1.41r8
-Release:	1
+Release:	2
 License:	GPL-like (but not GPL)
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
@@ -43,7 +43,9 @@ ARCH=__68k
 %install
 rm -rf $RPM_BUILD_ROOT
 # asl's make install requires mkdirhier (from XFree) and always strips binaries
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/%{name},%{_mandir}/man1,%{_libdir}/asl}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_includedir}/%{name},%{_mandir}/man1,%{_libdir}/asl} \
+	$RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+
 install asl pbind plist p2bin p2hex $RPM_BUILD_ROOT%{_bindir}
 install asl.1 pbind.1 plist.1 p2bin.1 p2hex.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install include/* $RPM_BUILD_ROOT%{_includedir}/%{name}
@@ -53,11 +55,14 @@ install *.msg $RPM_BUILD_ROOT%{_libdir}/asl
 #cp -f doc_EN/as.doc as-en.doc
 #cp -f doc_DE/as.doc as-de.doc
 #gzip -9nf README as-en.doc as-de.doc
-install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 install doc_EN/as.doc $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/as-en.doc
 install doc_DE/as.doc $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/as-de.doc
 install README $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+
 gzip -9nf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/*
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
@@ -73,6 +78,3 @@ gzip -9nf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/*
 %{_mandir}/man1/*
 %{_includedir}/asl
 %{_libdir}/asl
-
-%clean
-rm -rf $RPM_BUILD_ROOT
