@@ -6,6 +6,7 @@ Release:	4
 License:	GPL-like
 Group:		Development/Languages
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
+# Source0-md5:	f8b34f1acb48663243402b43f6070fd3
 Source1:	%{name}-Makefile.def
 BuildRequires:	tetex-latex
 BuildRequires:	tetex-dvips
