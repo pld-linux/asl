@@ -1,11 +1,12 @@
 --- asl-1.41r8/sysdefs.h.orig	1998-11-03 23:12:15.000000000 +0100
 +++ asl-1.41r8/sysdefs.h	2004-01-27 22:19:19.557485543 +0100
-@@ -272,6 +272,26 @@
+@@ -272,6 +272,27 @@
  #endif
  
  #endif /* __sparc */
 +
 +#if defined(__sparc__) && defined(__linux__)
++#define ARCHPRNAME "sparc"
 +#define ARCHSYSNAME "unknown-linux"
 +#define DEFSMADE
 +#define OPENRDMODE "r"
@@ -27,7 +28,7 @@
  
  /*===========================================================================*/
  /* Mips platforms */
-@@ -526,6 +546,53 @@
+@@ -526,6 +547,53 @@
  
  #endif /* __alpha */
  
