@@ -5,8 +5,6 @@ Version:	1.41r8
 Release:	2
 License:	GPL-like (but not GPL)
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version}.tar.gz
 Source1:	%{name}-Makefile.def
 BuildRequires:	tetex-latex
