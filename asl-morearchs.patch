@@ -1,0 +1,83 @@
+--- asl-1.41r8/sysdefs.h.orig	1998-11-03 23:12:15.000000000 +0100
++++ asl-1.41r8/sysdefs.h	2004-01-27 22:19:19.557485543 +0100
+@@ -271,6 +271,26 @@
+ #define LOCALE_NLS
+ #endif
+ 
++#ifdef __linux__
++#define ARCHSYSNAME "unknown-linux"
++#define DEFSMADE
++#define OPENRDMODE "r"
++#define OPENWRMODE "w"
++#define OPENUPMODE "r+"
++#define IEEEFLOAT
++typedef signed char Integ8;
++typedef unsigned char Card8;
++typedef signed short Integ16;
++typedef unsigned short Card16;
++#define HAS16
++typedef signed int Integ32;
++typedef unsigned int Card32;
++typedef signed long long Integ64;
++typedef unsigned long long Card64;
++#define HAS64
++#define LOCALE_NLS
++#endif
++
+ #endif /* __sparc */
+ 
+ /*===========================================================================*/
+@@ -526,6 +546,53 @@
+ 
+ #endif /* __alpha */
+ 
++
++#ifdef __x86_64__
++#define ARCHPRNAME "amd64"
++#ifdef __linux__
++#define ARCHSYSNAME "unknown-linux"
++#define DEFSMADE
++#define OPENRDMODE "r"
++#define OPENWRMODE "w"
++#define OPENUPMODE "r+"
++#define IEEEFLOAT
++typedef signed char Integ8;
++typedef unsigned char Card8;
++typedef signed short Integ16;
++typedef unsigned short Card16;
++#define HAS16
++typedef signed int Integ32;
++typedef unsigned int Card32;
++typedef signed long Integ64;
++typedef unsigned long Card64;
++#define HAS64
++#define LOCALE_NLS
++#endif
++#endif
++
++#ifdef __powerpc__
++#define ARCHPRNAME "ppc"
++#ifdef __linux__
++#define ARCHSYSNAME "unknown-linux"
++#define DEFSMADE
++#define OPENRDMODE "r"
++#define OPENWRMODE "w"
++#define OPENUPMODE "r+"
++#define IEEEFLOAT
++typedef signed char Integ8;
++typedef unsigned char Card8;
++typedef signed short Integ16;
++typedef unsigned short Card16;
++#define HAS16
++typedef signed int Integ32;
++typedef unsigned int Card32;
++typedef signed long long Integ64;
++typedef unsigned long long Card64;
++#define HAS64
++#define LOCALE_NLS
++#endif
++#endif
++
+ /*===========================================================================*/
+ /* Intel i386 platforms */
+ 
