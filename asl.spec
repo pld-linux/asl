@@ -1,5 +1,5 @@
 Summary:	Multi-target portable assembler
-Summary(pl):	Przeno¶ny asembler dla wielu rodzin procesorów
+Summary(pl.UTF-8):   PrzenoÅ›ny asembler dla wielu rodzin procesorÃ³w
 Name:		asl
 Version:	1.41r8
 Release:	8
@@ -20,10 +20,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A general purpose multi-target macro assembler with supporting tools.
 This assembler supports many targets including some PIC's and DSP's.
 
-%description -l pl
-Makroasembler ogólnego przeznaczenia wraz z narzêdziami. Potrafi
-generowaæ kod dla wielu rodzin uk³adów, tak¿e dla procesorów
-sygna³owych.
+%description -l pl.UTF-8
+Makroasembler ogÃ³lnego przeznaczenia wraz z narzÄ™dziami. Potrafi
+generowaÄ‡ kod dla wielu rodzin ukÅ‚adÃ³w, takÅ¼e dla procesorÃ³w
+sygnaÅ‚owych.
 
 %prep
 %setup -q
