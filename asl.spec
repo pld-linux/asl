@@ -1,5 +1,5 @@
 Summary:	Multi-target portable assembler
-Summary(pl.UTF-8):   Przenośny asembler dla wielu rodzin procesorów
+Summary(pl.UTF-8):	Przenośny asembler dla wielu rodzin procesorów
 Name:		asl
 Version:	1.41r8
 Release:	8
