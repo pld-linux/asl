@@ -9,11 +9,12 @@ Source0:	ftp://sunsite.unc.edu/pub/Linux/devel/lang/assemblers/%{name}-%{version
 # Source0-md5:	f8b34f1acb48663243402b43f6070fd3
 Source1:	%{name}-Makefile.def
 Patch0:		%{name}-morearchs.patch
-BuildRequires:	tetex-latex
+URL:		http://john.ccac.rwth-aachen.de:8000/as/index.html
 BuildRequires:	tetex-dvips
 BuildRequires:	tetex-format-latex
-BuildRequires:	tetex-tex-german
+BuildRequires:	tetex-latex
 BuildRequires:	tetex-makeindex
+BuildRequires:	tetex-tex-german
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
